@@ -28,7 +28,7 @@ def c_text(text):
 
 
 @app.route('/python/<text>')
-@app.route('/python/')
+@app.route('/python', strict_slashes=False)
 def python_text(text='is cool'):
     '''
     /python/<text> route
@@ -37,5 +37,5 @@ def python_text(text='is cool'):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port='5000')
     app.url_map.strict_slashes = False
