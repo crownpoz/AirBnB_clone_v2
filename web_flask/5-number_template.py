@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+starts flask app and renders template
+"""
 from flask import Flask, escape, render_template
 app = Flask(__name__)
 
@@ -53,5 +56,5 @@ def number_template(n):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port='5000')
     app.url_map.strict_slashes = False
